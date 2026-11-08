@@ -1,0 +1,223 @@
+.sound-archive {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 40px;
+  background: #080810;
+  color: #fff;
+}
+
+.sound-archive__container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sound-archive__header {
+  margin-bottom: 60px;
+}
+
+.sound-archive__num {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: #00d4ff;
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.sound-archive__title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(38px, 6vw, 84px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  margin-bottom: 20px;
+}
+
+.sound-archive__subtitle {
+  font-size: clamp(16px, 1.3vw, 20px);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 800px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+/* ─── Filter Tabs ─── */
+.sound-archive__filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 24px;
+}
+
+.sound-archive__tab {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.sound-archive__tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.sound-archive__tab.is-active {
+  background: #00d4ff;
+  color: #000;
+  border-color: #00d4ff;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+/* ─── Artists Grid ─── */
+.sound-archive__artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.artist-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 34px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.artist-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--artist-accent, #d4af37);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--artist-accent, #d4af37);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(var(--artist-accent), 0.15);
+}
+
+.artist-card:hover::before {
+  opacity: 1;
+}
+
+.artist-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.artist-card__era {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--artist-accent, #d4af37);
+  letter-spacing: 0.15em;
+}
+
+.artist-card__role {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.artist-card__name {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.artist-card__bio {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.artist-card__genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.artist-card__genre-pill {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.artist-card__works {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.artist-card__works-label {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.4);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.artist-card__works-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.artist-card__works-list li {
+  font-size: 12px;
+  color: #e2e8f0;
+}
+
+.artist-card__legacy {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 12px;
+}
+
+.artist-card__legacy span {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--artist-accent, #d4af37);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.artist-card__legacy p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.65);
+}

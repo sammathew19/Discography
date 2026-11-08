@@ -1,0 +1,394 @@
+/* ═══════════════════════════════════════════════════════
+   HERO SECTION — DISCOGRAPHY
+   The opening experience. Immersive, cinematic, stunning.
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Custom Properties ── */
+.hero {
+  --hero-bg: #050505;
+  --hero-gold: #D4AF37;
+  --hero-gold-soft: rgba(212, 175, 55, 0.3);
+  --hero-silver: #C0C0C0;
+  --hero-pink: #FF6B9D;
+  --hero-text: #F5F0E8;
+  --hero-text-dim: rgba(245, 240, 232, 0.5);
+}
+
+/* ── Main Container ── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: var(--hero-bg);
+  z-index: 10;
+}
+
+/* ── Three.js Canvas Container ── */
+.hero__canvas-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero__canvas-container canvas {
+  display: block;
+}
+
+/* ── Overlay (vignette + grain) ── */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 80% 80% at 50% 50%,
+      transparent 30%,
+      rgba(5, 5, 5, 0.4) 70%,
+      rgba(5, 5, 5, 0.85) 100%
+    );
+}
+
+/* Film grain overlay */
+.hero__overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  animation: heroGrain 0.5s steps(6) infinite;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+@keyframes heroGrain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-2%, -3%); }
+  20% { transform: translate(4%, 1%); }
+  30% { transform: translate(-1%, 4%); }
+  40% { transform: translate(3%, -2%); }
+  50% { transform: translate(-3%, 2%); }
+  60% { transform: translate(1%, -4%); }
+  70% { transform: translate(-4%, 3%); }
+  80% { transform: translate(2%, -1%); }
+  90% { transform: translate(-2%, 4%); }
+}
+
+/* ── Content Layer ── */
+.hero__content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  pointer-events: none;
+  text-align: center;
+}
+
+.hero__content > * {
+  pointer-events: auto;
+}
+
+/* ── Title Container ── */
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  will-change: transform, opacity;
+}
+
+/* ── Main Title: DISCOGRAPHY ── */
+.hero__title h1 {
+  margin: 0;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 12vw, 14rem);
+  line-height: 0.95;
+  letter-spacing: 0.05em;
+  color: var(--hero-text);
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  text-shadow:
+    0 0 40px var(--hero-gold-soft),
+    0 0 80px rgba(212, 175, 55, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Individual letter spans */
+.hero__letter {
+  display: inline-block;
+  will-change: transform, opacity;
+  position: relative;
+}
+
+/* Light sweep effect across title */
+.hero__title h1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.08) 30%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(212, 175, 55, 0.08) 70%,
+    transparent 100%
+  );
+  animation: heroLightSweep 4s ease-in-out infinite;
+  animation-delay: 2.5s;
+  pointer-events: none;
+}
+
+@keyframes heroLightSweep {
+  0% { left: -60%; }
+  100% { left: 120%; }
+}
+
+/* ── Subtitle ── */
+.hero__subtitle {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.7rem, 1.8vw, 1.1rem);
+  letter-spacing: 0.5em;
+  color: var(--hero-text-dim);
+  text-transform: uppercase;
+  will-change: transform, opacity, letter-spacing;
+}
+
+/* ── Intro Text ── */
+.hero__intro {
+  margin: 2.5rem 0 0 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  line-height: 1.7;
+  color: rgba(245, 240, 232, 0.45);
+  max-width: 480px;
+  will-change: opacity;
+}
+
+/* ── Scroll Indicator ── */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  will-change: opacity, transform;
+}
+
+.hero__scroll-line {
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--hero-gold) 40%,
+    var(--hero-gold) 60%,
+    transparent
+  );
+  position: relative;
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.hero__scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  animation: heroScrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes heroScrollPulse {
+  0% { top: -50%; }
+  100% { top: 150%; }
+}
+
+.hero__scroll-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: var(--hero-text-dim);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* ── Sound Toggle Button ── */
+.hero__sound-toggle {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  z-index: 5;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero__sound-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: scale(1.08);
+}
+
+.hero__sound-toggle:active {
+  transform: scale(0.95);
+}
+
+.hero__sound-icon {
+  width: 18px;
+  height: 18px;
+  position: relative;
+}
+
+/* Speaker icon — CSS-only */
+.hero__sound-icon-speaker {
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 7px;
+  background: var(--hero-text-dim);
+  transition: background 0.3s ease;
+}
+
+.hero__sound-icon-speaker::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: -3px;
+  border-style: solid;
+  border-width: 6.5px 0 6.5px 5px;
+  border-color: transparent transparent transparent var(--hero-text-dim);
+  transition: border-color 0.3s ease;
+}
+
+/* Sound waves */
+.hero__sound-wave {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 8px;
+  border: 1.5px solid var(--hero-text-dim);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero__sound-wave--1 {
+  right: 2px;
+  width: 3px;
+  height: 6px;
+}
+
+.hero__sound-wave--2 {
+  right: -2px;
+  width: 4px;
+  height: 10px;
+}
+
+/* Muted state */
+.hero__sound-toggle--muted .hero__sound-wave {
+  opacity: 0;
+  transform: translateY(-50%) scale(0.5);
+}
+
+.hero__sound-toggle--muted .hero__sound-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 1.5px;
+  background: var(--hero-pink);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero__content {
+    padding: 1.5rem;
+  }
+
+  .hero__intro {
+    max-width: 340px;
+    font-size: 0.85rem;
+  }
+
+  .hero__scroll-indicator {
+    bottom: 2rem;
+  }
+
+  .hero__scroll-line {
+    height: 40px;
+  }
+
+  .hero__sound-toggle {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero__subtitle {
+    letter-spacing: 0.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__subtitle {
+    letter-spacing: 0.2em;
+    font-size: 0.6rem;
+  }
+
+  .hero__intro {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .hero__scroll-text {
+    display: none;
+  }
+}
+
+/* ── Hero pinned state (used during scroll animation) ── */
+.hero--pinned {
+  position: fixed;
+  top: 0;
+  left: 0;
+}

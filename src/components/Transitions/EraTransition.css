@@ -1,0 +1,120 @@
+.era-trans {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 20px;
+  background: #000;
+  text-align: center;
+}
+
+.era-trans__backdrop {
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* ─── 70s to 80s ─── */
+.era-trans--era-70s-to-era-80s .era-trans__backdrop {
+  background: radial-gradient(circle at center, #7b2cbf 0%, #000 80%);
+}
+.era-trans--era-70s-to-era-80s .era-trans__ring {
+  border-color: #ff007f;
+}
+
+/* ─── 80s to 90s ─── */
+.era-trans--era-80s-to-era-90s .era-trans__backdrop {
+  background: radial-gradient(circle at center, #112a14 0%, #000 80%);
+}
+.era-trans--era-80s-to-era-90s .era-trans__ring {
+  border-color: #39ff14;
+}
+
+/* ─── 90s to 2000s ─── */
+.era-trans--era-90s-to-era-2000s .era-trans__backdrop {
+  background: radial-gradient(circle at center, #0f2b3e 0%, #000 80%);
+}
+.era-trans--era-90s-to-era-2000s .era-trans__ring {
+  border-color: #00d4ff;
+}
+
+/* ─── 2000s to 2010s ─── */
+.era-trans--era-2000s-to-era-2010s .era-trans__backdrop {
+  background: radial-gradient(circle at center, #08261e 0%, #000 80%);
+}
+.era-trans--era-2000s-to-era-2010s .era-trans__ring {
+  border-color: #00ffa3;
+}
+
+.era-trans__vortex {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.era-trans__ring {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: vortexSpin 20s linear infinite;
+}
+
+.era-trans__ring.ring-1 { width: 220px; height: 220px; animation-duration: 15s; }
+.era-trans__ring.ring-2 { width: 360px; height: 360px; animation-duration: 25s; animation-direction: reverse; }
+.era-trans__ring.ring-3 { width: 500px; height: 500px; animation-duration: 35s; }
+
+@keyframes vortexSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.era-trans__content {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+}
+
+.era-trans__tag {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.5);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.era-trans__title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.era-trans__sub {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.era-trans__down-arrow {
+  font-size: 24px;
+  color: #fff;
+  animation: arrowBounce 1.5s infinite ease-in-out;
+}
+
+@keyframes arrowBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(8px); opacity: 1; }
+}

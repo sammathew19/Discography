@@ -1,0 +1,34 @@
+.discography-app {
+  position: relative;
+  min-height: 100vh;
+  background-color: #050505;
+  color: #f5f5f5;
+  overflow-x: hidden;
+  transition: background-color 0.8s ease;
+}
+
+.discography-main {
+  position: relative;
+  width: 100%;
+}
+
+/* Era-specific background subtle tints */
+.discography-app--era-70s {
+  background-color: #090314;
+}
+
+.discography-app--era-80s {
+  background-color: #070714;
+}
+
+.discography-app--era-90s {
+  background-color: #040704;
+}
+
+.discography-app--era-2000s {
+  background-color: #060912;
+}
+
+.discography-app--era-2010s {
+  background-color: #030406;
+}

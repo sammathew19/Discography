@@ -1,0 +1,294 @@
+.era90 {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+/* ─── Industrial Banner ─── */
+.era90__banner {
+  background: #0d120d;
+  border: 2px solid #39ff14;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
+}
+
+.era90__warning-stripe {
+  background: #ffe600;
+  color: #000;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  padding: 8px 16px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.era90__banner-body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+  padding: 44px;
+  align-items: center;
+}
+
+.era90__flyer-date {
+  display: inline-block;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #ff5400;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.era90__rave-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 900;
+  color: #39ff14;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.era90__manifesto-text {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.65;
+  color: #d0e8d0;
+}
+
+/* ─── Interactive TB-303 Synth Box ─── */
+.era90__synth-box {
+  background: #050805;
+  border: 1px solid rgba(57, 255, 20, 0.4);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9);
+}
+
+.era90__synth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.era90__synth-title {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+
+.era90__synth-acid-badge {
+  background: #39ff14;
+  color: #000;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.15em;
+}
+
+.era90__visualizer-scope {
+  height: 90px;
+  background: #020402;
+  border: 1px solid rgba(57, 255, 20, 0.25);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.era90__visualizer-scope::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(rgba(57, 255, 20, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57, 255, 20, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.era90__acid-wave {
+  width: 100%;
+  transition: all 0.1s ease;
+}
+
+.era90__acid-wave svg {
+  width: 100%;
+  height: 100%;
+}
+
+.era90__knob-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.era90__control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.era90__control-group label {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 10px;
+  color: #39ff14;
+  letter-spacing: 0.12em;
+}
+
+.era90__control-group input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #111a11;
+  border-radius: 3px;
+  outline: none;
+}
+
+.era90__control-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #39ff14;
+  cursor: pointer;
+  box-shadow: 0 0 10px #39ff14;
+}
+
+.era90__toggle-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.era90__wave-btn {
+  flex: 1;
+  background: #111a11;
+  border: 1px solid rgba(57, 255, 20, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 8px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.era90__wave-btn.is-active {
+  background: rgba(57, 255, 20, 0.2);
+  border-color: #39ff14;
+  color: #39ff14;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+/* ─── Subcultures Grid ─── */
+.era90__subculture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.era90__card {
+  background: #0a0e0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 34px 28px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.era90__card:hover {
+  transform: translateY(-6px);
+  border-color: #39ff14;
+  box-shadow: 0 10px 30px rgba(57, 255, 20, 0.12);
+}
+
+.era90__card-stamp {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  color: #ff5400;
+  margin-bottom: 16px;
+}
+
+.era90__card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.era90__card-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Movements Strip ─── */
+.era90__movements-strip {
+  border-top: 1px solid rgba(57, 255, 20, 0.25);
+  padding-top: 40px;
+}
+
+.era90__movements-head {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  color: #39ff14;
+  margin-bottom: 24px;
+}
+
+.era90__genre-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.era90__genre-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(57, 255, 20, 0.06);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 999px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 12px;
+  color: #e0ffe0;
+}
+
+.era90__genre-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #39ff14;
+  box-shadow: 0 0 6px #39ff14;
+}
+
+@media (max-width: 992px) {
+  .era90__banner-body {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+  .era90__subculture-grid {
+    grid-template-columns: 1fr;
+  }
+}

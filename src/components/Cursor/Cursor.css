@@ -1,0 +1,361 @@
+/* ============================================
+   CURSOR — Custom Animated Cursor
+   ============================================ */
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cursor--visible {
+  opacity: 1;
+}
+
+/* --- Outer Ring --- */
+.cursor__outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  will-change: transform;
+}
+
+.cursor__outer-ring {
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid rgba(245, 245, 245, 0.5);
+  border-radius: 50%;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease,
+              background-color 0.4s ease,
+              border-radius 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+/* --- Inner Dot --- */
+.cursor__inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--color-text);
+  border-radius: 50%;
+  will-change: transform;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease,
+              opacity 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+/* --- Hover States --- */
+.cursor--hovering .cursor__outer {
+  width: 64px;
+  height: 64px;
+}
+
+.cursor--hovering .cursor__outer-ring {
+  width: 64px;
+  height: 64px;
+  border-color: rgba(245, 245, 245, 0.8);
+}
+
+.cursor--hovering .cursor__inner {
+  width: 4px;
+  height: 4px;
+  opacity: 0.6;
+}
+
+/* Pointer cursor type */
+.cursor__outer--pointer .cursor__outer-ring {
+  border-color: rgba(245, 245, 245, 0.9);
+}
+
+/* Expand cursor type */
+.cursor__outer--expand .cursor__outer-ring {
+  width: 80px;
+  height: 80px;
+  border-color: rgba(245, 245, 245, 0.3);
+  background: rgba(245, 245, 245, 0.05);
+}
+
+/* ============================================
+   ERA: 70s — Disco Gold Sparkle
+   ============================================ */
+.cursor--era-70 .cursor__outer-ring {
+  border-color: var(--era-70s-gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3),
+              inset 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+.cursor--era-70 .cursor__inner {
+  background: var(--era-70s-gold);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+.cursor--era-70.cursor--hovering .cursor__outer-ring {
+  border-color: var(--era-70s-gold);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.5),
+              inset 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+/* Sparkles */
+.cursor__sparkles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.cursor__sparkle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--era-70s-gold);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  animation: sparkle-orbit 3s infinite ease-in-out;
+  animation-delay: calc(var(--i) * 0.5s);
+}
+
+@keyframes sparkle-orbit {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(calc(var(--i) * 60deg)) translateX(10px) scale(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(calc(var(--i) * 60deg + 90deg)) translateX(22px) scale(1);
+  }
+  70% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) rotate(calc(var(--i) * 60deg + 200deg)) translateX(18px) scale(0.6);
+  }
+}
+
+/* Trail particles */
+.cursor__trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--trail-size, 4px);
+  height: var(--trail-size, 4px);
+  background: var(--era-70s-gold);
+  border-radius: 50%;
+  will-change: transform;
+  opacity: calc(0.6 - var(--trail-index) * 0.1);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+}
+
+/* ============================================
+   ERA: 80s — Neon Pink Glow
+   ============================================ */
+.cursor--era-80 .cursor__outer-ring {
+  border-color: var(--era-80s-pink);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4),
+              0 0 40px rgba(255, 0, 255, 0.15),
+              inset 0 0 10px rgba(255, 0, 255, 0.15);
+}
+
+.cursor--era-80 .cursor__inner {
+  background: var(--era-80s-pink);
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.8),
+              0 0 24px rgba(255, 0, 255, 0.3);
+}
+
+.cursor--era-80.cursor--hovering .cursor__outer-ring {
+  border-color: var(--era-80s-cyan);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5),
+              0 0 60px rgba(255, 0, 255, 0.2),
+              inset 0 0 15px rgba(0, 255, 255, 0.2);
+  animation: neon-pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4),
+                0 0 40px rgba(255, 0, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.7),
+                0 0 70px rgba(255, 0, 255, 0.3);
+  }
+}
+
+/* ============================================
+   ERA: 90s — Acid Green, Glitchy
+   ============================================ */
+.cursor--era-90 .cursor__outer-ring {
+  border-color: var(--era-90s-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+  animation: glitch-cursor 4s infinite steps(2);
+}
+
+.cursor--era-90 .cursor__inner {
+  background: var(--era-90s-primary);
+  box-shadow: 0 0 6px rgba(57, 255, 20, 0.8);
+  animation: inner-glitch 3s infinite steps(1);
+}
+
+.cursor--era-90.cursor--hovering .cursor__outer-ring {
+  border-color: var(--era-90s-yellow);
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+}
+
+/* Glitch lines */
+.cursor__glitch-lines {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cursor__glitch-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: var(--era-90s-primary);
+  opacity: 0;
+  animation: glitch-line-scan 2s infinite;
+}
+
+.cursor__glitch-line:nth-child(2) {
+  animation-delay: 0.7s;
+  background: var(--era-90s-orange);
+}
+
+@keyframes glitch-cursor {
+  0%, 94%, 100% { transform: translate(0); }
+  95% { transform: translate(-2px, 1px); }
+  96% { transform: translate(2px, -1px); }
+  97% { transform: translate(-1px, -2px); }
+}
+
+@keyframes inner-glitch {
+  0%, 90%, 100% {
+    opacity: 1;
+    border-radius: 50%;
+  }
+  91% {
+    opacity: 0.5;
+    border-radius: 2px;
+  }
+  93% {
+    opacity: 1;
+    border-radius: 50%;
+  }
+  95% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes glitch-line-scan {
+  0%, 80%, 100% { opacity: 0; top: 0; }
+  82% { opacity: 0.7; top: 20%; }
+  84% { opacity: 0; top: 40%; }
+  86% { opacity: 0.5; top: 60%; }
+  88% { opacity: 0; top: 80%; }
+}
+
+/* ============================================
+   ERA: 2000s — Chrome / Iridescent
+   ============================================ */
+.cursor--era-2000 .cursor__outer-ring {
+  border-color: transparent;
+  background: linear-gradient(135deg,
+    rgba(137, 207, 240, 0.3) 0%,
+    rgba(255, 105, 180, 0.3) 33%,
+    rgba(155, 89, 182, 0.3) 66%,
+    rgba(137, 207, 240, 0.3) 100%
+  );
+  background-size: 300% 300%;
+  animation: iridescent-shift 3s infinite ease;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.cursor--era-2000 .cursor__inner {
+  background: linear-gradient(135deg, var(--era-2000s-blue), var(--era-2000s-pink));
+  box-shadow: 0 0 10px rgba(137, 207, 240, 0.4);
+}
+
+.cursor--era-2000.cursor--hovering .cursor__outer-ring {
+  background: linear-gradient(135deg,
+    rgba(137, 207, 240, 0.5) 0%,
+    rgba(255, 105, 180, 0.5) 33%,
+    rgba(155, 89, 182, 0.5) 66%,
+    rgba(137, 207, 240, 0.5) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 20px rgba(137, 207, 240, 0.3),
+              0 0 40px rgba(255, 105, 180, 0.15);
+}
+
+@keyframes iridescent-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================
+   ERA: 2010s — Minimal White, Precise
+   ============================================ */
+.cursor--era-2010 .cursor__outer-ring {
+  border-color: rgba(245, 245, 245, 0.6);
+  border-width: 1px;
+}
+
+.cursor--era-2010 .cursor__inner {
+  background: var(--color-text);
+  width: 6px;
+  height: 6px;
+}
+
+.cursor--era-2010.cursor--hovering .cursor__outer-ring {
+  border-color: rgba(245, 245, 245, 0.9);
+  width: 56px;
+  height: 56px;
+  border-width: 1px;
+}
+
+.cursor--era-2010.cursor--hovering .cursor__inner {
+  width: 3px;
+  height: 3px;
+}
+
+/* ============================================
+   RESPONSIVE: Hide on touch devices
+   ============================================ */
+@media (pointer: coarse) {
+  .cursor {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor__sparkle,
+  .cursor__glitch-line,
+  .cursor__outer-ring,
+  .cursor__inner {
+    animation: none !important;
+  }
+}

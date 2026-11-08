@@ -1,0 +1,354 @@
+.era80 {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+/* ─── Neon Perspective Grid Header ─── */
+.era80__neon-banner {
+  position: relative;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #0f0a28 0%, #080816 100%);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  padding: 60px 40px;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(255, 0, 127, 0.15);
+}
+
+.era80__grid-horizon {
+  position: absolute;
+  bottom: 0;
+  left: -50%;
+  width: 200%;
+  height: 60%;
+  background: 
+    linear-gradient(to bottom, transparent 0%, rgba(255, 0, 127, 0.25) 100%),
+    repeating-linear-gradient(90deg, rgba(0, 240, 255, 0.25) 0px, rgba(0, 240, 255, 0.25) 2px, transparent 2px, transparent 60px),
+    repeating-linear-gradient(0deg, rgba(255, 0, 127, 0.25) 0px, rgba(255, 0, 127, 0.25) 2px, transparent 2px, transparent 60px);
+  transform: perspective(350px) rotateX(65deg);
+  transform-origin: bottom center;
+  pointer-events: none;
+  animation: gridScroll 12s linear infinite;
+}
+
+@keyframes gridScroll {
+  from { background-position: 0 0, 0 0, 0 0; }
+  to { background-position: 0 0, 0 0, 0 120px; }
+}
+
+.era80__neon-text-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+}
+
+.era80__vhs-tag {
+  display: inline-block;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: #ff007f;
+  margin-bottom: 16px;
+  text-shadow: 0 0 10px #ff007f;
+}
+
+.era80__glitch-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 2px 2px #ff007f, -2px -2px #00f0ff;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  line-height: 1.05;
+}
+
+.era80__neon-lead {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(16px, 1.3vw, 20px);
+  line-height: 1.6;
+  color: #e0e0ff;
+}
+
+/* ─── Interactive TR-808 Sequencer ─── */
+.era80__sequencer-card {
+  background: #111124;
+  border: 2px solid #ff007f;
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 0 0 40px rgba(255, 0, 127, 0.25), inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.era80__sequencer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.era80__seq-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.era80__seq-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  color: #ff007f;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
+}
+
+.era80__seq-sub {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: #00f0ff;
+  letter-spacing: 0.15em;
+}
+
+.era80__seq-btn {
+  background: #ff007f;
+  color: #fff;
+  border: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+  transition: all 0.2s ease;
+}
+
+.era80__seq-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.8);
+}
+
+.era80__step-counter {
+  display: grid;
+  grid-template-columns: 120px repeat(16, 1fr);
+  gap: 6px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.era80__counter-dot {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 10px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  grid-column-start: auto;
+}
+
+.era80__counter-dot.is-current {
+  color: #00f0ff;
+  font-weight: 800;
+  text-shadow: 0 0 8px #00f0ff;
+}
+
+.era80__track-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.era80__track-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.era80__track-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffe600;
+  letter-spacing: 0.1em;
+}
+
+.era80__track-steps {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 6px;
+}
+
+.era80__step-pad {
+  height: 38px;
+  background: #1e1e38;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.era80__step-pad.is-downbeat {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.era80__step-pad.is-on {
+  background: #ff007f;
+  border-color: #ff007f;
+  box-shadow: 0 0 10px #ff007f;
+}
+
+.era80__step-pad.is-active-step {
+  border-color: #00f0ff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px #00f0ff !important;
+}
+
+.era80__seq-foot {
+  margin-top: 18px;
+  font-size: 11px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+}
+
+/* ─── Pillars Grid ─── */
+.era80__pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.era80__pillar {
+  background: rgba(18, 18, 43, 0.7);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 20px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.era80__pillar:hover {
+  transform: translateY(-6px);
+  border-color: #00f0ff;
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
+}
+
+.era80__pillar-badge {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #ff007f;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.era80__pillar-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.era80__pillar-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.era80__scanline-box {
+  background: #080816;
+  border: 1px solid rgba(255, 0, 127, 0.4);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #00f0ff;
+  position: relative;
+  overflow: hidden;
+}
+
+.era80__scanline-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 3px);
+  pointer-events: none;
+}
+
+/* ─── Gear Grid ─── */
+.era80__gear-section {
+  border-top: 1px solid rgba(0, 240, 255, 0.2);
+  padding-top: 50px;
+}
+
+.era80__gear-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: #00f0ff;
+  margin-bottom: 30px;
+}
+
+.era80__gear-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.era80__gear-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 24px 20px;
+  transition: all 0.2s ease;
+}
+
+.era80__gear-card:hover {
+  background: rgba(255, 0, 127, 0.08);
+  border-color: #ff007f;
+}
+
+.era80__gear-code {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffe600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.era80__gear-card h5 {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.era80__gear-card p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 992px) {
+  .era80__step-counter,
+  .era80__track-row {
+    grid-template-columns: 1fr;
+  }
+  .era80__track-steps {
+    gap: 3px;
+  }
+  .era80__step-pad {
+    height: 28px;
+  }
+  .era80__pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .era80__gear-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

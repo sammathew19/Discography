@@ -1,0 +1,347 @@
+.era10 {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+/* ─── Minimal Brutalist Lead ─── */
+.era10__brutalist-hero {
+  border-left: 2px solid #00ffa3;
+  padding-left: 40px;
+}
+
+.era10__top-meta {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 24px;
+}
+
+.era10__live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #00ffa3;
+  font-weight: 700;
+}
+
+.era10__red-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff0055;
+  box-shadow: 0 0 10px #ff0055;
+  animation: liveBlink 1s infinite alternate ease-in-out;
+}
+
+@keyframes liveBlink {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.era10__coord {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.era10__giant-lead {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(34px, 5.5vw, 76px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: #ffffff;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.era10__statement {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(16px, 1.3vw, 20px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 900px;
+}
+
+/* ─── Boiler Room Stream Terminal ─── */
+.era10__stream-terminal {
+  background: #090c12;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+.era10__terminal-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #040508;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.era10__terminal-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.15em;
+}
+
+.era10__br-pill {
+  background: #fff;
+  color: #000;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+
+.era10__terminal-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  color: #00ffa3;
+}
+
+.era10__toggle-stream {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.era10__toggle-stream:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.era10__stream-monitor {
+  height: 320px;
+  background: radial-gradient(circle at center, #141b29 0%, #06090e 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.era10__stream-monitor::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,0.2) 0px, rgba(0,0,0,0.2) 1px, transparent 1px, transparent 2px);
+  pointer-events: none;
+}
+
+.era10__feed-overlay {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.era10__rec-text {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.1em;
+}
+
+.era10__dj-info {
+  text-align: right;
+}
+
+.era10__dj-info h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.era10__dj-info p {
+  font-size: 12px;
+  color: #00ffa3;
+  letter-spacing: 0.1em;
+}
+
+.era10__audio-visualizer-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 90px;
+  position: relative;
+  z-index: 1;
+}
+
+.era10__vis-bar {
+  flex: 1;
+  background: linear-gradient(180deg, #00ffa3 0%, #3b82f6 100%);
+  border-radius: 2px;
+  height: 20%;
+  transition: height 0.1s ease;
+}
+
+.era10__stream-monitor.is-streaming .era10__vis-bar {
+  animation: barEqualizer infinite alternate ease-in-out;
+}
+
+@keyframes barEqualizer {
+  0% { height: 10%; }
+  50% { height: 95%; }
+  100% { height: 35%; }
+}
+
+.era10__session-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #07090e;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.era10__session-btn {
+  background: none;
+  border: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.era10__session-btn:last-child {
+  border-right: none;
+}
+
+.era10__session-btn:hover,
+.era10__session-btn.is-active {
+  background: rgba(0, 255, 163, 0.08);
+}
+
+.era10__session-btn.is-active .era10__session-dj {
+  color: #00ffa3;
+}
+
+.era10__session-num {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.era10__session-dj {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.era10__session-city {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ─── Triad Grid ─── */
+.era10__triad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.era10__card {
+  background: rgba(11, 15, 25, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 34px 28px;
+  transition: all 0.3s ease;
+}
+
+.era10__card:hover {
+  transform: translateY(-6px);
+  border-color: #00ffa3;
+  box-shadow: 0 10px 30px rgba(0, 255, 163, 0.1);
+}
+
+.era10__card-sub {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #3b82f6;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.era10__card-h {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.era10__card-p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ─── Future Strip ─── */
+.era10__future-strip {
+  background: linear-gradient(135deg, rgba(0, 255, 163, 0.1), rgba(59, 130, 246, 0.1));
+  border: 1px solid rgba(0, 255, 163, 0.3);
+  border-radius: 20px;
+  padding: 44px;
+}
+
+.era10__future-header span {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #00ffa3;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.era10__future-header h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.era10__future-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 950px;
+}
+
+@media (max-width: 992px) {
+  .era10__triad-grid {
+    grid-template-columns: 1fr;
+  }
+  .era10__session-selector {
+    grid-template-columns: 1fr 1fr;
+  }
+}

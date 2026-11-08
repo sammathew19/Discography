@@ -1,0 +1,192 @@
+export const danceData = [
+  {
+    eraId: 'era-70s',
+    decade: '70s',
+    title: 'THE HUSTLE & THE FREESTYLE REVOLUTION',
+    tagline: 'Partner synchronization meets euphoric personal liberation.',
+    culturalContext:
+      'In the 1970s discotheque, dance evolved from stiff partner ballroom traditions into an electrifying synthesis of Latin salsa steps, swing syncopations, and uninhibited soul freestyle. As colored dance floor tiles illuminated beneath towering mirror balls, dancers invented partner moves that could be performed in tight, packed spaces while expressing absolute bodily freedom.',
+    dances: [
+      {
+        name: 'The Latin Hustle',
+        origin: 'Bronx & South Brooklyn (1973)',
+        tempo: '110–120 BPM',
+        description: 'A fast-paced, 6-count count partner dance incorporating intricate turns, hand checks, and spins derived from mambo and salsa, adapted to four-on-the-floor disco beats.',
+        signatureMove: 'The Triple Turn & Dip',
+      },
+      {
+        name: 'The Bump',
+        origin: 'New York discotheques (1974)',
+        tempo: '105–115 BPM',
+        description: 'A playful, rhythmic hip-to-hip or hip-to-butt collision executed in time with the kick drum, popular among casual dancers and party crowds.',
+        signatureMove: 'Side-to-Side Hip Check',
+      },
+      {
+        name: 'The Bus Stop / Electric Slide',
+        origin: 'Chicago & Philadelphia (1975)',
+        tempo: '108–118 BPM',
+        description: 'One of the earliest choreographed group line-dances where entire club floors synchronized intricate grapevine footwork without physical touch.',
+        signatureMove: 'Four-Wall Step Turn',
+      },
+      {
+        name: 'Freestyle Soul Dance',
+        origin: 'The Loft & Paradise Garage (1970–1979)',
+        tempo: '115–125 BPM',
+        description: 'Uninhibited expressive solo dancing inspired by African diasporic rhythms, gospel trance states, and spiritual release away from the spotlight.',
+        signatureMove: 'Spiritual Floor Drop & Spin',
+      },
+    ],
+  },
+  {
+    eraId: 'era-80s',
+    decade: '80s',
+    title: 'BREAKING, POPPING & VOGUEING',
+    tagline: 'Cardboard cyphers, robotic isolation, and runway ballroom drama.',
+    culturalContext:
+      'The 1980s decoupled dance from traditional partnering into competitive athletic acrobatics and theatrical self-mythologizing. On Bronx concrete, B-boys weaponized windmill spins and top-rock footwork; in California, dancers pioneered fluid robotic wave isolations; and in Harlem’s Black and Latino LGBTQ+ ballrooms, dancers forged Vogueing as high-fashion physical combat.',
+    dances: [
+      {
+        name: 'B-Boying / Breaking',
+        origin: 'South Bronx, NYC (1979–1984)',
+        tempo: '110–130 BPM',
+        description: 'Athletic street dance centered around four pillars: Toprock (standing footwork), Downrock (floor work), Power Moves (windmills, headspins), and Freezes.',
+        signatureMove: 'The Windmill & Baby Freeze',
+      },
+      {
+        name: 'Popping & The Robot',
+        origin: 'Fresno, California & Electric Boogaloos (1980)',
+        tempo: '105–118 BPM',
+        description: 'Rapid contraction and relaxation of muscles to cause a jerk or pop in the dancer’s body, combined with illusionary wave motions and robotic joint isolation.',
+        signatureMove: 'Arm Wave & Chest Pop',
+      },
+      {
+        name: 'Vogue (Old Way)',
+        origin: 'Harlem Ballroom Scene, NYC (1980–1989)',
+        tempo: '116–122 BPM',
+        description: 'Inspired by fashion model poses in Vogue magazine, ancient Egyptian hieroglyphics, and martial arts, emphasizing symmetric line angles, precision, and dramatic face framing.',
+        signatureMove: 'The Runway Pose & Hand Performance',
+      },
+      {
+        name: 'The Moonwalk / Backslide',
+        origin: 'Bill Bailey / Jeffrey Daniel / Michael Jackson (1983)',
+        tempo: '118 BPM',
+        description: 'An optical illusion where the dancer appears to slide backward effortlessly while making walking motions forward, unveiled to 47 million viewers on Motown 25.',
+        signatureMove: 'Weight-Shifting Heel Slide',
+      },
+    ],
+  },
+  {
+    eraId: 'era-90s',
+    decade: '90s',
+    title: 'THE RAVE REBELLION & HOUSE JACKING',
+    tagline: 'Torso jack pumps, Melbourne stomps, and glowing light trails.',
+    culturalContext:
+      'As music accelerated into hyper-kinetic warehouse raves and cavernous clubs, dance became an endurance ritual of communal solidarity. Dancers wore baggy cargo pants, reflective safety gear, and sneakers designed to withstand 8-hour marathons of relentless footwork, liquid arm flows, and the Chicago house "Jack" that shook every torso in unison.',
+    dances: [
+      {
+        name: 'The House Jack & Lofting',
+        origin: 'Chicago & NYC (1988–1995)',
+        tempo: '120–128 BPM',
+        description: 'The foundational house dance movement involving a continuous wave-like ripple through the torso and spine, complemented by acrobatic floor dives and lofting glides.',
+        signatureMove: 'The Torso Jack & Pas de Bourrée',
+      },
+      {
+        name: 'The Melbourne Shuffle',
+        origin: 'Melbourne underground rave scene (1990–1998)',
+        tempo: '135–150 BPM',
+        description: 'A fast heel-and-toe running-man movement designed to look like the dancer is gliding across grease, perfected in Australian underground techno raves.',
+        signatureMove: 'T-Step & Running Man Stomp',
+      },
+      {
+        name: 'Liquid Dancing & Gloving',
+        origin: 'US Rave Scene (1995–1999)',
+        tempo: '130–145 BPM',
+        description: 'An illusion-focused dance style where arms, hands, and fingers simulate continuous fluid streams of mercury or electricity, often accented with LED light finger trails.',
+        signatureMove: 'Continuous Finger-Rolling Stream',
+      },
+      {
+        name: 'Gabber / Hakken',
+        origin: 'Rotterdam, Netherlands (1992–1998)',
+        tempo: '160–190 BPM',
+        description: 'A blistering, synchronized tribal stomp characterized by rapid short steps, torso lunges, and swinging arms designed for thunderous hardcore techno.',
+        signatureMove: '180-BPM Heel Stomp',
+      },
+    ],
+  },
+  {
+    eraId: 'era-2000s',
+    decade: '2000s',
+    title: 'THE VIRAL STREET EVOLUTION',
+    tagline: 'Krumping catharsis, geometric finger tutting, and French Tecktonik.',
+    culturalContext:
+      'The early 2000s marked the birth of internet video sharing and street dance evolution. Underground styles moved from inner-city parking lots directly into MTV music videos and early YouTube virality. Dancers fused aggressive emotional release with intricate digital finger geometry, while European clubs birthed electropop dance phenomena.',
+    dances: [
+      {
+        name: 'Krumping',
+        origin: 'South Central Los Angeles (2000–2005)',
+        tempo: '90–110 BPM',
+        description: 'Created by Ceasare "Tight Eyez" Willis and Jo’Artis "Big Mijo" Ratti as an emotional, non-violent release of inner anger through explosive chest pops, arm swings, and stomps.',
+        signatureMove: 'Chest Slam & Arm Swing Jab',
+      },
+      {
+        name: 'Tutting & Finger Tutting',
+        origin: 'US Street Scene & Global Online Battles (2000–2008)',
+        tempo: '100–128 BPM',
+        description: 'Named after King Tutankhamun, this style employs geometric 90-degree right angles with wrists, elbows, and finger joints to create morphing digital matrices.',
+        signatureMove: 'Isometric Wrist Box Transformation',
+      },
+      {
+        name: 'Tecktonik / Electro Dance',
+        origin: 'Metropolis Club, Rungis, France (2002–2007)',
+        tempo: '128–135 BPM',
+        description: 'A frenetic Parisian club phenomenon blending vogue arm gestures, hip-hop, and hardstyle into lightning-fast windmill arm twirls and neon fluorescent fashion.',
+        signatureMove: 'Double Overhead Arm Whirlwind',
+      },
+      {
+        name: 'C-Walk / Clown Walk',
+        origin: 'Southern California (2001–2006)',
+        tempo: '95–115 BPM',
+        description: 'Intricate, hypnotic heel-and-toe gliding footwork spelling out letters and patterns across the floor, immortalized in mainstream hip-hop music videos.',
+        signatureMove: 'V-Step Shuffle Glide',
+      },
+    ],
+  },
+  {
+    eraId: 'era-2010s',
+    decade: '2010s–2020s',
+    title: 'CHICAGO FOOTWORK, VOGUE FEM & TIKTOK DYNAMICS',
+    tagline: '160 BPM ankle speed, floor dips, and global polyrhythmic fusion.',
+    culturalContext:
+      'In the modern era, dance culture is both hyper-localized in legendary underground hubs and hyper-accelerated through global smartphone feeds. Chicago footwork pushed ankle agility past human comprehension at 160 BPM, ballroom’s Vogue Fem achieved international competitive prominence, and dancers across Africa—from Amapiano to Afrobeats—rewired international club choreography.',
+    dances: [
+      {
+        name: 'Chicago Footwork',
+        origin: 'South & West Sides of Chicago (2010–present)',
+        tempo: '155–165 BPM',
+        description: 'Originated with battle crews like The Era and pioneers like DJ Rashad; breathtakingly fast ankle-twisting foot combinations paired with syncopated 808 sub-bass.',
+        signatureMove: 'The Ghost & The Erk & Jerk',
+      },
+      {
+        name: 'Vogue Fem',
+        origin: 'Global Ballroom Major Battles (2010–present)',
+        tempo: '120–130 BPM',
+        description: 'An exaggerated, theatrical evolution of vogueing centered around five elements: Duckwalk, Catwalk, Hands, Floor Performance, and dramatic Spins & Dips.',
+        signatureMove: 'The Dramatic Backwards Floor Dip',
+      },
+      {
+        name: 'Amapiano Dance (Bacardi & Kilamba)',
+        origin: 'Pretoria & Johannesburg, South Africa (2018–present)',
+        tempo: '112–116 BPM',
+        description: 'Characterized by subtle shoulder shakes, intricate foot stomps, and facial storytelling executed to deep, hypnotic log-drum basslines.',
+        signatureMove: 'The Tshwala Bam Step & Shoulder Roll',
+      },
+      {
+        name: 'Cutting Shapes / Modern Shuffle Revival',
+        origin: 'UK & Global Electronic Festivals (2014–present)',
+        tempo: '124–128 BPM',
+        description: 'A modern house dance style focused on crisp running man variations, T-steps, and charleston crosses performed to deep and future house basslines.',
+        signatureMove: 'The Charleston Cross-Kick Combo',
+      },
+    ],
+  },
+];
